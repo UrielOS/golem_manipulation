@@ -1,0 +1,39 @@
+controller_list:
+  - name: /golem/r_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - m0
+      - m10
+      - m11
+      - m12
+      - m13
+      - m14
+
+  - name: /golem/r_gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - m15
+      - m17
+
+  - name: /golem/l_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - m20
+      - m21
+      - m22
+      - m23
+      - m24
+
+  - name: /golem/l_gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - m25
+      - m27

@@ -1,0 +1,33 @@
+# Author: Uriel Ortiz
+# E-Mail: euriel.ortiz@gmail.com
+# Date:   august/2016
+
+# This config file has necessary parameters 
+# for the golem joint position controllers in the gazebo simulation
+
+golem:
+
+  joint_state_controller: 
+    publish_rate: 100
+    type: joint_state_controller/JointStateController
+  
+  r_arm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - m0
+      - m10
+      - m11
+      - m12
+      - m13
+      - m14
+
+  r_gripper_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - m15
+      - m17
+
+
+
+  
+  

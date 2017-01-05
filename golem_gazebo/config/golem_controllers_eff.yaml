@@ -1,0 +1,124 @@
+# Author: Uriel Ortiz
+# E-Mail: euriel.ortiz@gmail.com
+# Date:   august/2016
+
+# This config file has necessary parameters 
+# for the golem joint position controllers in the gazebo simulation
+
+golem:
+
+  joint_state_controller: 
+    publish_rate: 100
+    type: joint_state_controller/JointStateController
+  
+  r_arm_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - m0
+      - m10
+      - m11
+      - m12
+      - m13
+      - m14
+    constraints:
+      goal_time: 0.5                   
+      stopped_velocity_tolerance: 0.02 
+      m0:
+        trajectory: 0.1       
+        goal: 0.02
+      m10:
+        trajectory: 0.1        
+        goal: 0.02
+      m11:
+        trajectory: 0.1        
+        goal: 0.02
+      m12:
+        trajectory: 0.1        
+        goal: 0.02
+      m13:
+        trajectory: 0.1        
+        goal: 0.02
+      m14:
+        trajectory: 0.1        
+        goal: 0.02           
+    gains:
+        m0: {p: 4000.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m10: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m11: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m12: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m13: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m14: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+
+  r_gripper_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - m15
+      - m17
+    gains:
+        m15: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m17: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+    constraints:
+      goal_time: 0.5                   
+      stopped_velocity_tolerance: 0.02 
+      m15:
+        trajectory: 0.2    
+        goal: 0.5
+      m17:
+        trajectory: 0.2        
+        goal: 0.5
+
+  l_arm_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - m20
+      - m21
+      - m22
+      - m23
+      - m24
+    constraints:
+      goal_time: 0.5                   
+      stopped_velocity_tolerance: 0.02
+      m20:
+        trajectory: 0.1        
+        goal: 0.02
+      m21:
+        trajectory: 0.1        
+        goal: 0.02
+      m22:
+        trajectory: 0.1        
+        goal: 0.02
+      m23:
+        trajectory: 0.1        
+        goal: 0.02
+      m24:
+        trajectory: 0.1        
+        goal: 0.02           
+    gains:
+        m20: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m21: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m22: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m23: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m24: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+
+  l_gripper_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - m25
+      - m27
+    gains:
+        m25: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+        m27: {p: 1500.0, i: 0.0, d: 0.0, i_clamp_max: 10.0, i_clamp_min: -10.0}
+    constraints:
+      goal_time: 0.5                   
+      stopped_velocity_tolerance: 0.02 
+      m25:
+        trajectory: 0.2      
+        goal: 0.5
+      m27:
+        trajectory: 0.2        
+        goal: 0.5
+
+
+
+  
+  

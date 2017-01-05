@@ -1,0 +1,76 @@
+# Author:   Uriel Ortiz
+# E-Mail:   euriel.ortiz@gmail.com
+# Date:     january/2016
+
+# This config file group different joint controllers to make them an action server.
+# This allows to control motors with actions instead of publishing messages.
+
+left_arm_controller:
+    motors:
+        - m20
+        - m21
+        - m22
+        - m23
+        - m24
+    poses:
+        home: [0.0, 0.0, 0.0, 0.0, 0.0]
+        navi: [1.06, 1.22, 1.07, 0.7, 0.0]
+    controller:
+        package: dynamixel_controllers
+        module: joint_trajectory_action_controller
+        type: JointTrajectoryActionController
+    joint_trajectory_action_node:
+        min_velocity: 0.1
+        constraints:
+            goal_time: 1
+
+right_arm_controller:
+    motors:
+        - m10
+        - m11
+        - m12
+        - m13
+        - m14
+    poses:
+        home: [0.0, 0.0, 0.0, 0.0, 0.0]
+        navi: [-1.18, -1.05, 0.66, 0.84, 0.0]
+    controller:
+        package: dynamixel_controllers
+        module: joint_trajectory_action_controller
+        type: JointTrajectoryActionController
+    joint_trajectory_action_node:
+        min_velocity: 0.1
+        constraints:
+            goal_time: 1
+
+right_gripper_controller:
+    motors:
+        - m15
+        - m17
+    poses:
+        close: [0.0, 0.0]
+        open: [0.0, 0.0]
+    controller:
+        package: dynamixel_controllers
+        module: joint_trajectory_action_controller
+        type: JointTrajectoryActionController
+    joint_trajectory_action_node:
+        min_velocity: 0.1
+        constraints:
+            goal_time: 1
+
+left_gripper_controller:
+    motors:
+        - m25
+        - m27
+    poses:
+        close: [0.0, 0.0]
+        open: [0.0, 0.0]
+    controller:
+        package: dynamixel_controllers
+        module: joint_trajectory_action_controller
+        type: JointTrajectoryActionController
+    joint_trajectory_action_node:
+        min_velocity: 0.1
+        constraints:
+            goal_time: 1

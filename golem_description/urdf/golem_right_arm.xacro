@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:   august/2016
+
+This is the main XML code for the Golem URDF.
+URDF allow to simulate accurately geometry and kinematics of a robot
+with programs like gazebo or rviz.
+-->
+
+<robot
+    name="golem"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+    <!-- Constants for robot dimensions -->
+    <xacro:property name="PI" value="3.1415926535897931"/>
+    <xacro:property name="FRICTION" value="0.6"/>
+    <xacro:property name="JOINT_VEL" value="0.1"/>
+
+
+    <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+    <xacro:include filename="$(find golem_description)/urdf/golem.gazebo" />
+
+    <!-- Base link -->
+   <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+    <mass
+      value="2" />
+    <inertia
+      ixx="0.002"  ixy="0.0000"   ixz="0.0000"
+      iyy="0.002"  iyz="0.0000"
+      izz="0.002" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- Body motor -->
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="-0.0881112438415369 -0.000608832310704913 0.590311564445662"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.002"  ixy="0.000"  ixz="0.000"
+        iyy="0.002"  iyz="0.000"
+        izz="0.002" />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 0.9 0.8 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="mb"
+    type="fixed">
+    <origin
+      xyz="0.12661 0.0 0.37"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="base_link" />
+    <child
+      link="body" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  
+
+  <!-- Chest motor -->
+  <link
+    name="chest">
+    <inertial>
+      <origin
+        xyz="-0.00897011879110521 0.0 0.0676449232079905"
+        rpy="0 0 0" />
+      <mass
+        value="1.5" />
+      <inertia
+        ixx="0.0020"  ixy="0.0000"   ixz="0.0000"
+        iyy="0.0020"  iyz="0.0"
+        izz="0.0020" />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/chest.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/chest.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="m0"
+    type="revolute">
+    <origin
+      xyz="0.035 0.0 0.85"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="body" />
+    <child
+      link="chest" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="8.4"
+      velocity="${JOINT_VEL}" />
+    <dynamics 
+      friction="${FRICTION}"/>
+  </joint>
+  
+
+  <!--Right shoulder m10 motor -->
+  <link
+    name="r_shoulder_m10">
+    <inertial>
+      <origin
+        xyz="0.117811024350009 -2.32352220330134E-05 0.0429372756020914"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.0020"  ixy="0.0000"   ixz="0.0000"
+        iyy="0.0020"  iyz="0.0000"
+        izz="0.0020" />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_shoulder_m10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.5 0.5 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_shoulder_m10.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="m10"
+    type="revolute">
+    <origin
+      xyz="0 -0.1225 0.0593"
+      rpy="0.0 0.0 -1.5708" />
+    <parent
+      link="chest" />
+    <child
+      link="r_shoulder_m10" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.14"
+      upper="1.75"
+      effort="100.0"
+      velocity="${JOINT_VEL}" />
+    <dynamics 
+      friction="${FRICTION}"/>
+  </joint>
+
+
+
+  <!--Right shoulder m11 motor -->
+  <link
+    name="r_shoulder_m11">
+    <inertial>
+      <origin
+        xyz="-0.00429117580061061 0.0 -0.0397852819427538"
+        rpy="0 0 0" />
+      <mass
+        value="0.009" />
+      <inertia
+        ixx="0.0002"     ixy="0.0"   ixz="0.0"
+        iyy="0.0002"     iyz="0.0"
+        izz="0.0002"/>
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_shoulder_m11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_shoulder_m11.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  
+  <joint
+    name="m11"
+    type="revolute">
+    <origin
+      xyz="0.212 0.0 0.054396"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="r_shoulder_m10" />
+    <child
+      link="r_shoulder_m11" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="100.0"
+      velocity="${JOINT_VEL}" />
+    <dynamics 
+      friction="${FRICTION}"/>
+  </joint>
+  
+
+  <!-- Right arm motor -->
+  <link
+    name="r_arm">
+    <inertial>
+      <origin
+        xyz="0.131360969349986 0.00869049182380488 0.000487078032783306"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.002"  ixy="0.0000"  ixz="0.0000"
+        iyy="0.002"  iyz="0.0000"
+        izz="0.002" />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="m12"
+    type="revolute">
+    <origin
+      xyz="0.0 0.0 -0.06"
+      rpy="0.0 ${PI/2} 0" />
+    <parent
+      link="r_shoulder_m11" />
+    <child
+      link="r_arm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.55"
+      upper="1.55"
+      effort="100.0"
+      velocity="${JOINT_VEL}" />
+    <dynamics 
+      friction="${FRICTION}"/>
+  </joint>
+  
+
+  <!-- Right forearm  -->
+  <link
+    name="r_forearm">
+    <inertial>
+      <origin
+        xyz="0.108270232216097 0.0483698597482063 -0.000350351491485268"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.001"  ixy="0.0000"  ixz="0.0000"
+        iyy="0.001"  iyz="0.0000"
+        izz="0.002" />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 ${-PI/4}" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_forearm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 ${-PI/4}" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="m13"
+    type="revolute">
+    <origin
+      xyz="0.24895 0.05978 0"
+      rpy="0.0 0.0 ${PI/2}" />
+    <parent
+      link="r_arm" />
+    <child
+      link="r_forearm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.67"
+      upper="1.67"
+      effort="100.0"
+      velocity="${JOINT_VEL}" />
+    <dynamics 
+      friction="${FRICTION}"/>
+  </joint>
+
+
+  <!-- Right wrist motor -->
+  <link
+    name="r_wrist">
+    <inertial>
+      <origin
+        xyz="0.0049946466652247 -0.00176382149218224 0.0531597075092114"
+        rpy="0 0 0" />
+      <mass
+        value="0.031134878193257" />
+      <inertia
+        ixx="0.00003"   ixy="0.0000"    ixz="0.0000"
+        iyy="0.00005"   iyz="0.0000"
+        izz="0.00003" />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://golem_description/meshes/r_wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="m14"
+    type="revolute">
+    <origin
+      xyz= "0.200 -0.034 0"
+      rpy="${PI/2} 0.0 ${PI/2}" />
+    <parent
+      link="r_forearm" />
+    <child
+      link="r_wrist" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="100.0"
+      velocity="${JOINT_VEL}" />
+    <dynamics 
+      friction="${FRICTION}"/>
+  </joint>
+
+
+  <!-- Right virtual joint to indicate center of the gripper -->
+  <link
+    name="r_eef" />
+
+  <joint
+    name="r_eef_end"
+    type="fixed">
+    <origin
+      xyz="0.0 0.0 0.2"
+      rpy="${-PI/2} ${-PI/2} ${-PI/2}" />
+    <parent
+      link="r_wrist" />
+    <child
+      link="r_eef" />
+  </joint>
+
+</robot>

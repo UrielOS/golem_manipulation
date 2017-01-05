@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:   august/2016
+
+This XML is a complement to main URDF file
+It contains gazebo link colors and the ros control plugin
+--> 
+
+
+<robot>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/golem</robotNamespace>
+    </plugin>
+  </gazebo>
+
+<!-- Gazebo link properties-->
+  <gazebo reference="base_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="body">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="chest">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="head1">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  
+  <gazebo reference="head2">
+    <material>Gazebo/SkyBlue</material>
+  </gazebo>
+  
+  <gazebo reference="r_shoulder_m10">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  
+  <gazebo reference="r_shoulder_m11">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <gazebo reference="r_forearm">
+    <material>Gazebo/Purple</material>
+  </gazebo>
+  
+  <gazebo reference="r_arm">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  
+  <gazebo reference="r_wrist">
+    <material>Gazebo/SkyBlue</material>
+  </gazebo>
+  
+  <gazebo reference="r_gripper_m15">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="r_gripper_m17">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="l_shoulder_m20">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  
+  <gazebo reference="l_shoulder_m21">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <gazebo reference="l_forearm">
+    <material>Gazebo/Purple</material>
+  </gazebo>
+  
+  <gazebo reference="l_arm">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  
+  <gazebo reference="l_wrist">
+    <material>Gazebo/SkyBlue</material>
+  </gazebo>
+  
+  <gazebo reference="l_gripper_m25">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="l_gripper_m27">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>
+
+

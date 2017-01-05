@@ -1,0 +1,10 @@
+controller_list:
+
+  - name: fake_r_arm_controller
+    joints:
+      - m0
+      - m10
+      - m11
+      - m12
+      - m13
+      - m14

@@ -1,0 +1,8 @@
+# Forward Kinematics input
+string motor_group
+sensor_msgs/JointState joint_state
+---
+# Forward Kinematics output
+geometry_msgs/Point position
+geometry_msgs/Point orientation
+bool error

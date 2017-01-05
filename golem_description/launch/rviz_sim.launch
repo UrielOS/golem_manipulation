@@ -1,0 +1,48 @@
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:   august/2016
+
+This launch file brings up the golem rviz simulation
+with a GUI to see joint movements
+--> 
+
+<launch>
+  <!-- The gui is set enabled by default -->
+  <arg
+    name="gui"
+    default="True" />
+
+  <!-- Load the URDF to the parameter server -->
+  <param 
+    name="robot_description"
+    command="$(find xacro)/xacro.py '$(find golem_description)/urdf/golem.xacro'" />
+
+  <!--param
+    name="robot_description"
+    textfile="$(find golem_description)/urdf/golem.urdf" /-->
+
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+
+  <!-- This node publishes joint angles to /joint_states through GUI -->
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+
+  <!-- This node suscribes to /joint_states and use URDF to calculate
+       direct kinematics of the robot and publishes them to /tf -->
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher" />
+
+  <!-- This node create the rviz simulation environment -->
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find golem_description)/urdf.rviz" />
+</launch>

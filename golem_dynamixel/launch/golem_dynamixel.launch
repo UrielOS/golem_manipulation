@@ -1,0 +1,124 @@
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:   january/2016
+
+This launch file enables communication between ROS and dynamixel motors.
+It also brings up individual and meta-controllers
+--> 
+
+<launch>
+    
+    <!-- Controller_manager -->
+    <!-- This node interface ROS with the dynamixel serial bus -->
+    <node 
+        name="dynamixel_manager" 
+        pkg="dynamixel_controllers" 
+        type="controller_manager.py" 
+        required="true" 
+        output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                dxl_USB0:
+                    port_name: "/dev/ttyUSB0"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 30
+                    update_rate: 20
+                    diagnostics:
+                        error_level_temp: 65
+                        warn_level_temp: 60
+        </rosparam>
+    </node>
+
+    <!-- Config file with individual joints controller parameters -->
+    <rosparam 
+        file="$(find golem_dynamixel)/config/golem_joints.yaml" 
+        command="load"/>
+
+    <!-- Config file with meta controller parameters -->
+    <rosparam 
+        file="$(find golem_dynamixel)/config/meta_controller_motorgroups.yaml" 
+        command="load"/>
+
+    <!-- Start the general motor controller -->
+    <node 
+        pkg="dynamixel_controllers" 
+        name="controller_spawner" 
+        type="controller_spawner.py" 
+        output="screen" 
+        args="--manager=dxl_manager
+              --port=dxl_USB0
+              --type=simple
+                motor10_controller
+                motor11_controller
+                motor12_controller
+                motor13_controller
+                motor14_controller
+                motor15_controller
+                motor17_controller
+                motor20_controller
+                motor21_controller
+                motor22_controller
+                motor23_controller
+                motor24_controller
+                motor25_controller
+                motor27_controller"/>    
+
+    <!--Start a meta-controller for each motor group -->
+    <!-- Left arm controller -->
+    <node 
+        pkg="dynamixel_controllers" 
+        name="left_arm_controller" 
+        type="controller_spawner.py" 
+        output="screen" 
+        args="--manager=dxl_manager
+              --type=meta
+                left_arm_controller
+                motor20_controller
+                motor21_controller
+                motor22_controller
+                motor23_controller
+                motor24_controller"/>
+    
+    <!-- Right arm controller -->
+    <node 
+        pkg="dynamixel_controllers" 
+        name="right_arm_controller" 
+        type="controller_spawner.py" 
+        output="screen" 
+        args="--manager=dxl_manager
+              --type=meta
+                right_arm_controller
+                motor10_controller
+                motor11_controller
+                motor12_controller
+                motor13_controller
+                motor14_controller"/>
+
+    <!-- Left gripper controller -->
+    <node 
+        pkg="dynamixel_controllers" 
+        name="left_gripper_controller" 
+        type="controller_spawner.py" 
+        output="screen" 
+        args="--manager=dxl_manager
+              --type=meta
+                left_gripper_controller
+                motor25_controller
+                motor27_controller"/>
+
+    <!-- Right gripper controller -->
+    <node 
+        pkg="dynamixel_controllers" 
+        name="right_gripper_controller" 
+        type="controller_spawner.py" 
+        output="screen" 
+        args="--manager=dxl_manager
+              --type=meta
+                right_gripper_controller
+                motor15_controller
+                motor17_controller"/>
+
+</launch>

@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:   august/2016
+
+This XML file contains golem_world customizations.
+-->
+
+  <world name="golem_world">
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- A light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+    <model name="bookshelf01">
+      <include>
+        <static>true</static>
+        <uri>model://bookshelf</uri>
+      </include>
+      <pose>1.3 0.0 0.0 0.0 0.0 -1.5707</pose>     
+    </model>
+
+    <model name="bookshelf02">
+      <include>
+        <static>true</static>
+        <uri>model://bookshelf</uri>
+      </include>
+      <pose>0.6 -1.0 0.0 0.0 0.0 -2.8</pose>     
+    </model>
+
+    <model name="coke_can01">
+      <include>
+        <static>false</static>
+        <uri>model://coke_can</uri>
+      </include>
+      <pose>1.0 0.2 0.8 0.0 0.0 0.0</pose>
+    </model>
+
+    <model name="coke_can02">
+      <include>
+        <static>false</static>
+        <uri>model://coke_can</uri>
+      </include>
+      <pose>1.0 -0.2 0.8 0.0 0.0 0.0</pose>
+    </model>
+
+    <model name="coke_can03">
+      <include>
+        <static>false</static>
+        <uri>model://coke_can</uri>
+      </include>
+      <pose>1.0 0.2 1.2 0.0 0.0 0.0</pose>
+    </model>
+
+    <model name="beer01">
+      <include>
+        <static>false</static>
+        <uri>model://coke_can</uri>
+      </include>
+      <pose>1.0 -0.2 1.2 0.0 0.0 0.0</pose>
+    </model>
+
+
+  </world>
+
+</sdf>

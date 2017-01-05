@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <name>golem_description</name>
+  <version>1.0.0</version>
+  <description>The Golem description package</description>
+  
+  <author>Uriel O</author>
+  <maintainer email="euriel.ortiz@gmail.com">Uriel Ortiz</maintainer>
+  <license>BSD</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>urdf</build_depend>
+  <run_depend>urdf</run_depend>
+
+</package>

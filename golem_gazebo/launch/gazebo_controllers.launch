@@ -1,0 +1,61 @@
+<!-- 
+Author: Uriel Ortiz
+E-Mail: euriel.ortiz@gmail.com
+Date:   august/2016
+
+This launch file brings up motor controllers to the golem gazebo simulation 
+-->
+
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam 
+    file="$(find golem_gazebo)/config/golem_controllers_eff.yaml" 
+    command="load"/>
+
+  <!-- load the controllers -->
+	<node 
+	  name="controller_spawner" 
+	  pkg="controller_manager" 
+	  type="spawner" 
+	  respawn="true"
+	  output="screen"
+	  ns="/golem"
+	  args="joint_state_controller
+	  		r_arm_controller
+	  		r_gripper_controller
+	  		l_arm_controller
+	  		l_gripper_controller
+	        ">
+    <remap
+      from="/golem/joint_states"
+      to="/joint_states"/>
+  </node>
+
+  <node 
+    name="remapper" 
+    pkg="golem_gazebo" 
+    type="remapper.py" 
+    respawn="false"
+    output="screen">
+  </node>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node 
+    name="robot_state_publisher" 
+    pkg="robot_state_publisher" 
+    type="robot_state_publisher"
+    respawn="false" 
+    output="screen">
+  </node>
+
+  <!-- Move every joint to 'Home pose' -->
+  <!--node 
+      name="home_pose_node" 
+      pkg="golem_gazebo_control" 
+      type="robot_poses.py" 
+      respawn="false"
+      output="screen"
+      ns="/golem" /-->
+
+</launch>

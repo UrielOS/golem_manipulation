@@ -1,0 +1,221 @@
+# Author:   Uriel Ortiz
+# E-Mail:   euriel.ortiz@gmail.com
+# Date:     january/2016
+
+# This config file has all necesary parameters 
+# for each individual joint controller
+
+# if error, try '' or [] in the lists
+
+joints:
+    - motor0_controller
+    - motor10_controller
+    - motor11_controller
+    - motor12_controller
+    - motor13_controller
+    - motor14_controller
+    - motor15_controller
+    - motor17_controller
+    - motor20_controller
+    - motor21_controller
+    - motor22_controller
+    - motor23_controller
+    - motor24_controller
+    - motor25_controller
+    - motor27_controller
+
+motor0_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m0
+    joint_speed: 0.3
+    motor:
+        id: 3
+        init: 512
+        min: 0
+        max: 1023
+
+motor10_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m10
+    joint_speed: 0.3
+    motor:
+        id: 10
+        init: 2040
+        min: 1320
+        max: 3070
+
+motor11_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m11
+    joint_speed: 0.3
+    motor:
+        id: 11
+        init: 2040
+        min: 0
+        max: 4040
+
+motor12_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m12
+    joint_speed: 0.3
+    motor:
+        id: 12
+        init: 2040
+        min: 1030
+        max: 3070
+
+motor13_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m13
+    joint_speed: 0.3
+    motor:
+        id: 13
+        init: 2060
+        min: 970
+        max: 3080
+
+motor14_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m14
+    joint_speed: 4.0
+    motor:
+        id: 14
+        init: 2040
+        min: 0
+        max: 4040
+
+motor15_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m15
+    joint_speed: 1.0
+    motor:
+        id: 15
+        init: 512
+        min: 530
+        max: 670
+
+motor17_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m17
+    joint_speed: 1.0
+    motor:
+        id: 17
+        init: 512
+        min: 350
+        max: 470
+
+
+motor20_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m20
+    joint_speed: 0.3
+    motor:
+        id: 20
+        init: 1915
+        min: 770
+        max: 2660
+
+motor21_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m21
+    joint_speed: 0.3
+    motor:
+        id: 21
+        init: 2060
+        min: 0
+        max: 4036
+
+motor22_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m22
+    joint_speed: 0.3
+    motor:
+        id: 22
+        init: 2060
+        min: 1030
+        max: 3070
+
+motor23_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m23
+    joint_speed: 0.3
+    motor:
+        id: 23
+        init: 2060
+        min: 970
+        max: 3080
+
+motor24_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m24
+    joint_speed: 4.0
+    motor:
+        id: 24
+        init: 1160
+        min: 125
+        max: 2215
+
+motor25_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m25
+    joint_speed: 1.0
+    motor:
+        id: 25
+        init: 512
+        min: 0
+        max: 1023
+
+motor27_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: m27
+    joint_speed: 1.0
+    motor:
+        id: 27
+        init: 512
+        min: 0
+        max: 1023

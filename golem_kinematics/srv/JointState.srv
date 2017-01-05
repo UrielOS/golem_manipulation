@@ -1,0 +1,5 @@
+# Set Joint State
+string motor_group
+sensor_msgs/JointState joint_state
+---
+bool result

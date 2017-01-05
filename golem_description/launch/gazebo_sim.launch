@@ -1,0 +1,18 @@
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:	august/2016
+
+This launch file brings up the golem gazebo simulation
+without any controllers 
+--> 
+
+<launch>
+  
+  <include
+    file="$(find golem_description)/launch/gazebo_sim_no_controllers.launch" />
+
+  <include
+    file="$(find golem_gazebo_control)/launch/golem_controllers.launch" />
+
+</launch>

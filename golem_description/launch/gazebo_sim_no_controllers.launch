@@ -1,0 +1,48 @@
+<!-- 
+Author: Uriel Ortiz   
+E-Mail: euriel.ortiz@gmail.com    
+Date:	august/2016
+
+This launch file brings up the golem gazebo simulation
+without any controllers 
+--> 
+
+<launch>
+  
+  <include
+    file="$(find golem_gazebo)/launch/golem_world.launch" />
+
+  <!-- To use when using a urdf file instead of a xacro file
+  
+  <param
+    name="robot_description"
+    textfile="$(find golem_description)/urdf/golem.URDF" />
+
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find golem_description)/urdf/golem.xacro 
+          -urdf 
+          -model golem
+          "
+    output="screen" />
+  -->
+
+  <!-- Load the URDF into the ROS Parameter Server -->  
+  <param 
+    name="robot_description"
+    command="$(find xacro)/xacro.py '$(find golem_description)/urdf/golem.xacro'" />
+
+  <!--Load the model from the parameter server to gazebo-->
+  <node 
+    name="urdf_spawner" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    respawn="false" 
+    output="screen"
+    args="-urdf 
+          -model golem 
+          -param robot_description"/>
+
+</launch>
