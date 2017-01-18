@@ -49,7 +49,7 @@ planner_configs:
     k_constant: 0.0  # value used to normalize expresssion. default: 0.0 set in setup()
   PRMkConfigDefault:
     type: geometric::PRM
-    max_nearest_neighbors: 10  # use k nearest neighbors. default: 10
+    max_nearest_neighbors: 20  # use k nearest neighbors. default: 10
   PRMstarkConfigDefault:
     type: geometric::PRMstar
 chest:
@@ -65,6 +65,7 @@ chest:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
+    
 right_arm:
   planner_configs:
     - SBLkConfigDefault
@@ -78,8 +79,6 @@ right_arm:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-  projection_evaluator: joints(m0,m10)
-  longest_valid_segment_fraction: 0.05
 
 right_eef:
   planner_configs:
@@ -94,5 +93,3 @@ right_eef:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-  projection_evaluator: joints(m15,m17)
-  longest_valid_segment_fraction: 0.05

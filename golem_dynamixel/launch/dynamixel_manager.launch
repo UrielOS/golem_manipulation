@@ -1,0 +1,25 @@
+<launch>
+    
+    <!-- Controller_manager -->
+    <!-- This node interface ROS with the dynamixel serial bus -->
+    <node 
+        name="dynamixel_manager" 
+        pkg="dynamixel_controllers" 
+        type="controller_manager.py" 
+        required="true" 
+        output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                pan_tilt_port:
+                    port_name: "/dev/ttyUSB0"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 255
+                    update_rate: 20
+                    diagnostics:
+                        error_level_temp: 65
+                        warn_level_temp: 60
+        </rosparam>
+    </node>
+</launch>

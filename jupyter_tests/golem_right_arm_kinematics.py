@@ -73,9 +73,9 @@ def forward_kinematics(t1, t2, t3, t4, t5, t6):
     x6 = A06[0, 3]
     y6 = A06[1, 3]
     z6 = A06[2, 3]
-    yaw6 = t6
-    pitch6 = -t4 - t5
-    roll6 = t1 + t2 + t3
+    yaw6 = rad_limit(t6)
+    pitch6 = rad_limit(-t4 - t5)
+    roll6 = rad_limit(t1 + t2 + t3)
 
     return round(x6, tol), round(y6, tol), round(z6, tol), round(yaw6, tol), round(pitch6, tol), round(roll6, 4)
 
@@ -109,14 +109,12 @@ def inverse_kinematics(x, y, z, yaw, pitch, roll):
                     s4 = ((-1) ** j1) * sqrt(1 - c4 ** 2)
                     t4 = rad_limit(atan2(s4, c4) - rho)
                     if not max_th4 > t4 > min_th4:
-                        # print 'sol', i, "solucion fuera de rango"
                         i += 1
                         continue
 
                     # theta5 calculation
                     t5 = rad_limit(-pitch - t4)
                     if not max_th5 > t5 > min_th5:
-                        # print 'sol', i, "solucion fuera de rango"
                         i += 1
                         continue
 
@@ -136,7 +134,6 @@ def inverse_kinematics(x, y, z, yaw, pitch, roll):
                     s1 = ((-1) ** j3) * sqrt(1 - c1 ** 2)
                     t1 = rad_limit(atan2(s1, c1))
                     if not max_th1 > t1 > min_th1:
-                        # print 'sol', i, "solucion fuera de rango"
                         i += 1
                         continue
 
@@ -144,14 +141,12 @@ def inverse_kinematics(x, y, z, yaw, pitch, roll):
                     t12 = atan2(xp - l1 * s1, yp - l1 * c1)
                     t2 = rad_limit(t12 - t1)
                     if not max_th2 > t2 > min_th2:
-                        # print 'sol', i, "solucion fuera de rango"
                         i += 1
                         continue
 
                     # theta3 calculation
                     t3 = rad_limit(roll - t1 - t2)
                     if not max_th3 > t3 > min_th3:
-                        # print 'sol', i, "solucion fuera de rango"
                         i += 1
                         continue
 
@@ -169,11 +164,10 @@ def inverse_kinematics(x, y, z, yaw, pitch, roll):
                             if abs(dk[2] - test[2]) <= etol:
                                 if abs(dk[3] - test[3]) <= etol:
                                     if abs(dk[4] - test[4]) <= etol:
-                                        # print 'sol', i, '|', signs, '|', current_sol
                                         solution.append(current_sol)
+                                        print 'sol', i, '|', signs, '|', current_sol
 
                 except ValueError:
-                    # print 'sol', i, "solucion compleja"
                     pass
                 i += 1
     return solution

@@ -13,6 +13,6 @@ without any controllers
     file="$(find golem_description)/launch/gazebo_sim_no_controllers.launch" />
 
   <include
-    file="$(find golem_gazebo_control)/launch/golem_controllers.launch" />
+    file="$(find golem_gazebo)/launch/gazebo_controllers.launch" />
 
 </launch>

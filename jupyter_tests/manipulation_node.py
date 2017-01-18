@@ -27,8 +27,8 @@ class MotorGroup:
         self.move_group.clear_pose_targets()
         self.move_group.set_start_state_to_current_state()
         plan = self.compute_plan(angles)
-        print 'New joint state for ' + self.name + ':', angles
-        print 'Moving motors...\n'
+        # print 'New joint state for ' + self.name + ':', angles
+        # print 'Moving motors...\n'
         result = self.move_group.execute(plan)
         return result
 
@@ -122,7 +122,7 @@ class Arm(MotorGroup):
     def ik_service(self, req):
         response = gk_srv.InverseKinematicsResponse()
 
-        ik_solver = req.only_pos
+        only_pos = req.only_pos
         xd = req.position.x
         yd = req.position.y
         zd = req.position.z
@@ -131,7 +131,7 @@ class Arm(MotorGroup):
         rolld = req.orientation.z
 
         try:
-            ik = self.inverse_kinematics(xd, yd, zd, yawd, pitchd, rolld, ik_solver)
+            ik = self.inverse_kinematics(xd, yd, zd, yawd, pitchd, rolld, only_pos)
 
             ##### Select solution
             if ik:

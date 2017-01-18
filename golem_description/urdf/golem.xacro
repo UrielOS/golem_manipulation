@@ -68,7 +68,7 @@ with programs like gazebo or rviz.
     </collision>
   </link>
 
-  <joint name="fixed" type="fixed">
+  <joint name="fixed_joint" type="fixed">
       <parent link="world"/>
       <child link="base_link"/>
   </joint>
