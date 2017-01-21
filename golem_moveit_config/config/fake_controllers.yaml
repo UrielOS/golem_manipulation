@@ -1,6 +1,6 @@
 controller_list:
 
-  - name: fake_r_arm_controller
+  - name: fake_right_arm_controller
     joints:
       - m0
       - m10
@@ -8,3 +8,22 @@ controller_list:
       - m12
       - m13
       - m14
+
+  - name: fake_right_eef_controller
+    joints:
+      - m15
+      - m17
+
+  - name: fake_left_arm_controller
+    joints:
+      - m0
+      - m20
+      - m21
+      - m22
+      - m23
+      - m24
+
+  - name: fake_left_eef_controller
+    joints:
+      - m25
+      - m27

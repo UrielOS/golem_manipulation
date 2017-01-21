@@ -41,7 +41,7 @@ This XML file contains golem_world customizations.
         <static>false</static>
         <uri>model://coke_can</uri>
       </include>
-      <pose>1.0 0.2 0.8 0.0 0.0 0.0</pose>
+      <pose>1.0 0.15 0.8 0.0 0.0 0.0</pose>
     </model>
 
     <model name="coke_can02">
@@ -49,7 +49,7 @@ This XML file contains golem_world customizations.
         <static>false</static>
         <uri>model://coke_can</uri>
       </include>
-      <pose>1.0 -0.2 0.8 0.0 0.0 0.0</pose>
+      <pose>1.0 -0.25 0.8 0.0 0.0 0.0</pose>
     </model>
 
     <model name="coke_can03">
@@ -57,7 +57,7 @@ This XML file contains golem_world customizations.
         <static>false</static>
         <uri>model://coke_can</uri>
       </include>
-      <pose>1.0 0.2 1.2 0.0 0.0 0.0</pose>
+      <pose>1.0 0.15 1.2 0.0 0.0 0.0</pose>
     </model>
 
     <model name="beer01">
@@ -65,7 +65,7 @@ This XML file contains golem_world customizations.
         <static>false</static>
         <uri>model://coke_can</uri>
       </include>
-      <pose>1.0 -0.2 1.2 0.0 0.0 0.0</pose>
+      <pose>1.0 -0.25 1.2 0.0 0.0 0.0</pose>
     </model>
 
 

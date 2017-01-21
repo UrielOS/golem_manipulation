@@ -17,7 +17,7 @@ with programs like gazebo or rviz.
     <!-- Constants for robot dimensions -->
     <xacro:property name="PI" value="3.1415926535897931"/>
     <xacro:property name="FRICTION" value="0.4"/>
-    <xacro:property name="JOINT_VEL" value="0.5"/>
+    <xacro:property name="JOINT_VEL" value="1.0"/>
     <xacro:property name="CONTROLLER" value="EffortJointInterface"/>
 
 

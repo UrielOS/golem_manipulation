@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d490196-05e1-414a-9bfe-32595aca3340" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/golem_description/launch/gazebo_sim_moveit.launch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/golem_kinematics/scripts/golem_kinematics_server.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/golem_kinematics/scripts/move_group_node.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/golem_moveit_config/launch/golem_moveit.launch" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_description/launch/gazebo_sim.launch" afterPath="$PROJECT_DIR$/golem_description/launch/gazebo_sim.launch" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/golem_moveit_config/launch/golem_gazebo_demo.launch" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/golem_moveit_config/launch/golem_rviz_demo.launch" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_description/urdf/golem.xacro" afterPath="$PROJECT_DIR$/golem_description/urdf/golem.xacro" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_dynamixel/launch/dynamixel_manager.launch" afterPath="$PROJECT_DIR$/golem_dynamixel/launch/dynamixel_manager.launch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_gazebo/worlds/golem.world" afterPath="$PROJECT_DIR$/golem_gazebo/worlds/golem.world" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py" afterPath="$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py" afterPath="$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_moveit_config/config/golem.srdf" afterPath="$PROJECT_DIR$/golem_moveit_config/config/golem.srdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_moveit_config/config/fake_controllers.yaml" afterPath="$PROJECT_DIR$/golem_moveit_config/config/fake_controllers.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_moveit_config/config/joint_limits.yaml" afterPath="$PROJECT_DIR$/golem_moveit_config/config/joint_limits.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_moveit_config/config/ompl_planning.yaml" afterPath="$PROJECT_DIR$/golem_moveit_config/config/ompl_planning.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_moveit_config/launch/moveit.rviz" afterPath="$PROJECT_DIR$/golem_moveit_config/launch/moveit.rviz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jupyter_tests/.ipynb_checkpoints/gazebo_manipulation_test-checkpoint.ipynb" afterPath="$PROJECT_DIR$/jupyter_tests/.ipynb_checkpoints/gazebo_manipulation_test-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jupyter_tests/.ipynb_checkpoints/moveit_tutorial-checkpoint.ipynb" afterPath="$PROJECT_DIR$/jupyter_tests/.ipynb_checkpoints/moveit_tutorial-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jupyter_tests/gazebo_manipulation_test.ipynb" afterPath="$PROJECT_DIR$/jupyter_tests/gazebo_manipulation_test.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jupyter_tests/golem_right_arm_kinematics.py" afterPath="$PROJECT_DIR$/jupyter_tests/golem_right_arm_kinematics.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jupyter_tests/moveit_tutorial.ipynb" afterPath="$PROJECT_DIR$/jupyter_tests/moveit_tutorial.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py" afterPath="$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jupyter_tests/Untitled.ipynb" afterPath="$PROJECT_DIR$/jupyter_tests/Untitled.ipynb" />
     </list>
     <ignored path="golem_manipulation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,21 +33,32 @@
     <favorites_list name="golem_manipulation" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="manipulation_node.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="manipulation_node.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="150" column="79" selection-start-line="150" selection-start-column="79" selection-end-line="150" selection-end-column="79" />
+            <state relative-caret-position="255">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
-                <element signature="e#290#892#0" expanded="false" />
-                <element signature="e#945#1288#0" expanded="false" />
-                <element signature="e#1338#1523#0" expanded="false" />
-                <element signature="e#1567#1977#0" expanded="false" />
-                <element signature="e#2505#2844#0" expanded="false" />
-                <element signature="e#2885#3617#0" expanded="false" />
-                <element signature="e#3715#4251#0" expanded="false" />
+                <element signature="e#991#1446#0" expanded="false" />
+                <element signature="e#1496#1681#0" expanded="false" />
+                <element signature="e#1725#2157#0" expanded="false" />
+                <element signature="e#2739#3078#0" expanded="false" />
+                <element signature="e#3119#3851#0" expanded="false" />
+                <element signature="e#3949#4485#0" expanded="false" />
+                <element signature="e#4526#5202#0" expanded="false" />
+                <element signature="e#5294#5653#0" expanded="false" />
+                <element signature="e#5701#6071#0" expanded="false" />
+                <element signature="e#6119#6143#0" expanded="false" />
+                <element signature="e#6236#6808#0" expanded="false" />
+                <element signature="e#6872#7421#0" expanded="false" />
+                <element signature="e#7455#8583#0" expanded="false" />
+                <element signature="e#7833#7907#0" expanded="false" />
+                <element signature="e#7946#8020#0" expanded="false" />
+                <element signature="e#8066#8274#0" expanded="false" />
+                <element signature="e#8348#8474#0" expanded="false" />
+                <element signature="e#8513#8583#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -59,10 +67,32 @@
       <file leaf-file-name="planning_scene_spawner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+            <state relative-caret-position="480">
+              <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
               <folding>
                 <element signature="e#23#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="golem_right_arm_kinematics.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="200" column="31" selection-start-line="200" selection-start-column="31" selection-end-line="200" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manipulation_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+              <folding>
+                <element signature="e#23#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +113,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py" />
         <option value="$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py" />
         <option value="$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py" />
+        <option value="$PROJECT_DIR$/golem_kinematics/scripts/manipulation_test.py" />
       </list>
     </option>
   </component>
@@ -119,10 +151,59 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
       <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_kinematics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_manipulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="golem_kinematics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -283,10 +364,9 @@
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -298,6 +378,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -315,24 +396,193 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+        <state relative-caret-position="425">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#290#892#0" expanded="false" />
-            <element signature="e#945#1288#0" expanded="false" />
-            <element signature="e#1338#1523#0" expanded="false" />
-            <element signature="e#1567#1977#0" expanded="false" />
-            <element signature="e#2505#2844#0" expanded="false" />
-            <element signature="e#2885#3617#0" expanded="false" />
-            <element signature="e#3715#4251#0" expanded="false" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="200" column="31" selection-start-line="200" selection-start-column="31" selection-end-line="200" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="200" column="31" selection-start-line="200" selection-start-column="31" selection-end-line="200" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
+          <folding>
+            <element signature="e#23#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3400">
+          <caret line="200" column="31" selection-start-line="200" selection-start-column="31" selection-end-line="200" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
+          <folding>
+            <element signature="e#23#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="150" column="79" selection-start-line="150" selection-start-column="79" selection-end-line="150" selection-end-column="79" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -353,13 +603,100 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#290#892#0" expanded="false" />
-            <element signature="e#945#1288#0" expanded="false" />
-            <element signature="e#1338#1523#0" expanded="false" />
-            <element signature="e#1567#1977#0" expanded="false" />
-            <element signature="e#2505#2844#0" expanded="false" />
-            <element signature="e#2885#3617#0" expanded="false" />
-            <element signature="e#3715#4251#0" expanded="false" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+          <folding>
+            <element signature="e#23#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -368,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5746">
           <caret line="338" column="8" selection-start-line="338" selection-start-column="8" selection-end-line="338" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -388,13 +724,24 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#290#892#0" expanded="false" />
-            <element signature="e#945#1288#0" expanded="false" />
-            <element signature="e#1338#1523#0" expanded="false" />
-            <element signature="e#1567#1977#0" expanded="false" />
-            <element signature="e#2505#2844#0" expanded="false" />
-            <element signature="e#2885#3617#0" expanded="false" />
-            <element signature="e#3715#4251#0" expanded="false" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -405,13 +752,24 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#290#892#0" expanded="false" />
-            <element signature="e#945#1288#0" expanded="false" />
-            <element signature="e#1338#1523#0" expanded="false" />
-            <element signature="e#1567#1977#0" expanded="false" />
-            <element signature="e#2505#2844#0" expanded="false" />
-            <element signature="e#2885#3617#0" expanded="false" />
-            <element signature="e#3715#4251#0" expanded="false" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -422,13 +780,24 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#290#892#0" expanded="false" />
-            <element signature="e#945#1288#0" expanded="false" />
-            <element signature="e#1338#1523#0" expanded="false" />
-            <element signature="e#1567#1977#0" expanded="false" />
-            <element signature="e#2505#2844#0" expanded="false" />
-            <element signature="e#2885#3617#0" expanded="false" />
-            <element signature="e#3715#4251#0" expanded="false" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -443,16 +812,24 @@
     <entry file="file://$PROJECT_DIR$/jupyter_tests/Untitled.ipynb" />
     <entry file="file:///opt/ros/indigo/lib/python2.7/dist-packages/moveit_commander/move_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="338" column="8" selection-start-line="338" selection-start-column="8" selection-end-line="338" selection-end-column="8" />
+        <state relative-caret-position="205">
+          <caret line="464" column="8" selection-start-line="464" selection-start-column="8" selection-end-line="464" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/golem_right_arm_kinematics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="200" column="31" selection-start-line="200" selection-start-column="31" selection-end-line="200" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/golem_moveit_config/scripts/planning_scene_spawner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+        <state relative-caret-position="480">
+          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
           <folding>
             <element signature="e#23#41#0" expanded="true" />
           </folding>
@@ -461,17 +838,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="150" column="79" selection-start-line="150" selection-start-column="79" selection-end-line="150" selection-end-column="79" />
+        <state relative-caret-position="255">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#290#892#0" expanded="false" />
-            <element signature="e#945#1288#0" expanded="false" />
-            <element signature="e#1338#1523#0" expanded="false" />
-            <element signature="e#1567#1977#0" expanded="false" />
-            <element signature="e#2505#2844#0" expanded="false" />
-            <element signature="e#2885#3617#0" expanded="false" />
-            <element signature="e#3715#4251#0" expanded="false" />
+            <element signature="e#991#1446#0" expanded="false" />
+            <element signature="e#1496#1681#0" expanded="false" />
+            <element signature="e#1725#2157#0" expanded="false" />
+            <element signature="e#2739#3078#0" expanded="false" />
+            <element signature="e#3119#3851#0" expanded="false" />
+            <element signature="e#3949#4485#0" expanded="false" />
+            <element signature="e#4526#5202#0" expanded="false" />
+            <element signature="e#5294#5653#0" expanded="false" />
+            <element signature="e#5701#6071#0" expanded="false" />
+            <element signature="e#6119#6143#0" expanded="false" />
+            <element signature="e#6236#6808#0" expanded="false" />
+            <element signature="e#6872#7421#0" expanded="false" />
+            <element signature="e#7455#8583#0" expanded="false" />
+            <element signature="e#7833#7907#0" expanded="false" />
+            <element signature="e#7946#8020#0" expanded="false" />
+            <element signature="e#8066#8274#0" expanded="false" />
+            <element signature="e#8348#8474#0" expanded="false" />
+            <element signature="e#8513#8583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golem_kinematics/scripts/manipulation_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
           </folding>
         </state>
       </provider>

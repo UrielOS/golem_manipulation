@@ -10,7 +10,6 @@ global scene
 global robot
 
 def add_bookshelf(name, x, y, rotation):
-
     pos_x = x
     pos_y = y
     roll = 0.0
@@ -104,6 +103,18 @@ def add_bookshelf(name, x, y, rotation):
     scene.add_box(name + 'shelf1', shelf1_pose, shelf1_size)
     scene.add_box(name + 'shelf2', shelf2_pose, shelf2_size)
 
+
+def add_coke(name, x, y, z):
+    coke_pose = geometry_msgs.msg.PoseStamped()
+    coke_pose.header.frame_id = robot.get_planning_frame()
+    coke_pose.pose.position.x = x
+    coke_pose.pose.position.y = y
+    coke_pose.pose.position.z = z
+    coke_size = (0.14, 0.14, 0.29)
+
+    scene.add_box(name, coke_pose, coke_size)
+
+
 def main():
     print "======================================================"
     print "============ PLANNING_SCENE_SPAWNER NODE ============="
@@ -116,12 +127,33 @@ def main():
     robot = moveit_commander.RobotCommander()
     scene = moveit_commander.PlanningSceneInterface()
 
+
     rp.sleep(1)
-    print "\n==== Publishing planning scene\n"
+    print "\n==== Publishing planning scene ====\n"
+
+    print 'Added bookshelf01'
     add_bookshelf('bookshelf01', 1.1, 0.2, -1.5707)
     rp.sleep(1)
+
+    print 'Added bookshelf02'
     add_bookshelf('bookshelf02', 0.54, -0.61, -2.8)
-    print "==== Done!"
+    rp.sleep(1)
+
+    print 'Added coke_01'
+    add_coke('coke_01', 1.0, 0.15, 1.36)
+    print 'Added coke_02'
+    add_coke('coke_02', 1.0, -0.25, 1.36)
+    print 'Added coke_03'
+    add_coke('coke_03', 1.0, 0.15, 0.965)
+    print 'Added coke_04'
+    add_coke('coke_04', 1.0, -0.25, 0.965)
+    rp.sleep(2)
+
+    print "\n==== Done! ===="
+    print "Known objects:"
+    object_list = scene.get_known_object_names()
+    for object in object_list:
+        print '  -', object
 
 
 if __name__ == '__main__':

@@ -11,11 +11,11 @@
         <rosparam>
             namespace: dxl_manager
             serial_ports:
-                pan_tilt_port:
+                dxl_USB0:
                     port_name: "/dev/ttyUSB0"
                     baud_rate: 1000000
-                    min_motor_id: 1
-                    max_motor_id: 255
+                    min_motor_id: 0
+                    max_motor_id: 30
                     update_rate: 20
                     diagnostics:
                         error_level_temp: 65

@@ -16,20 +16,24 @@ class MotorGroup:
         self.planning_attempts = 10
         self.move_group = moveit_commander.MoveGroupCommander(group_name)
         self.move_group.set_planner_id('RRTConnectkConfigDefault')
-        self.move_group.set_workspace([0.1, -1.1, 0.35, 1.3, 0.5, 1.65])  # [minX, minY, minZ, maxX, maxY, maxZ]
+        self.move_group.set_workspace([0.1, -1.1, 0.35, 1.3, 0.5, 1.8])  # [minX, minY, minZ, maxX, maxY, maxZ]
         self.move_group.set_planning_time(3.5)
         self.move_group.set_num_planning_attempts(10)
         self.move_group.allow_looking(True)
+        self.move_group.allow_replanning(True)
         rp.Service(self.ns + self.name + '/set_joint_state', gk_srv.JointState, self.joint_state_service)
 
     def move_to_joint_state(self, angles):
         # arg 'position' must be a list
         self.move_group.clear_pose_targets()
         self.move_group.set_start_state_to_current_state()
+        print 'Attempting to move', self.name
         plan = self.compute_plan(angles)
-        print 'New joint state for ' + self.name + ':', angles
-        print 'Moving motors...\n'
-        result = self.move_group.execute(plan)
+        if plan.joint_trajectory.points:
+            print 'Moving',  self.name, 'to joint state:\n    ', angles, '\n'
+            result = self.move_group.execute(plan)
+        else:
+            result = False
         return result
 
     def joint_state_service(self, msg):
@@ -45,21 +49,21 @@ class MotorGroup:
         for i in range(self.planning_attempts):
             my_plan.append(self.move_group.plan())
             if my_plan[i].joint_trajectory.points:
-                print 'Plan solution found in', i + 1, 'attempts!'
+                print 'Motion plan found in', i + 1, 'attempts!'
                 return my_plan[i]
-        print 'No solution found in', self.planning_attempts, 'attempts :('
-        return []
+        print "Couldn't find trajectory solution in", self.planning_attempts, "attempts :("
+        return my_plan[0]
 
 
 class Arm(MotorGroup):
     def __init__(self, group_name):
         MotorGroup.__init__(self, group_name)
+        # self.move_group.set_goal_tolerance(0.1)
+        self.home = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
         rp.Service(self.ns + self.name + '/compute_fk', gk_srv.ForwardKinematics, self.fk_service)
         rp.Service(self.ns + self.name + '/compute_ik', gk_srv.InverseKinematics, self.ik_service)
         rp.Service(self.ns + self.name + '/move_to_pose', gk_srv.MoveToPose, self.move2pose_service)
-        # Pick service
-        # Place service
 
     def forward_kinematics(self, th1, th2, th3, th4, th5, th6):
         if self.name == 'right_arm':
@@ -153,9 +157,8 @@ class Arm(MotorGroup):
         if ik:
             joint_values = ik[0]
             position = list(joint_values)
-            print position
+            print 'Computing trajectory...'
             result = self.move_to_joint_state(position)
-            print result
         else:
             print 'No IK solution found'
             result = False
@@ -176,22 +179,60 @@ class Arm(MotorGroup):
 
         return response
 
+    def add_end_effector(self, name):
+        self.eef = Gripper(name)
+
+    def pick(self, object_position, object_name="", link_name="", touch_links=[]):
+        if self.eef:
+            if len(object_position) >= 3:
+                self.move_to_pose(*object_position)
+                if object_name != "":
+                    result = self.eef.grasp(object_name, link_name, touch_links)
+                else:
+                    self.eef.close_gripper()
+                    result = True
+            else:
+                print 'Object_position argument must have at least 3 elements'
+                result = False
+        else:
+            'No end effector for this arm is defined!'
+            result = False
+        return result
+
+    def place(self, object_position, object_name=""):
+        if self.eef:
+            if len(object_position) >= 3:
+                self.move_to_pose(*object_position)
+                if object_name != "":
+                    result = self.eef.release(object_name)
+                else:
+                    self.eef.open_gripper()
+                    result = True
+            else:
+                print 'Object_position argument must have at least 3 elements'
+                result = False
+        else:
+            'No end effector for this arm is defined!'
+            result = False
+        return result
+
 
 class Gripper(MotorGroup):
     def __init__(self, group_name):
         MotorGroup.__init__(self, group_name)
+        # self.move_group.set_goal_tolerance(0.1)
         self.state_flag = True
-        self.opened_state = [1.3, 0.2]
-        self.closed_state = [0.0, 1.5]
+        self.opened_state = [1.2, 0.3]
+        self.closed_state = [0.4, 1.1]
         rp.Service(self.ns + self.name + '/activate_gripper', std_srvs.srv.Empty, self.gripper_service)
 
     def open_gripper(self):
-        self.move_to_joint_state(self.opened_state)
-        print 'Opening gripper: ', self.name, '\n'
+        result = self.move_to_joint_state(self.opened_state)
+        return result
 
     def close_gripper(self):
-        self.move_to_joint_state(self.closed_state)
-        print 'Closing gripper: ', self.name, '\n'
+        result = self.move_to_joint_state(self.closed_state)
+        return result
 
     def gripper_service(self, msg):
         if self.state_flag:
@@ -201,6 +242,15 @@ class Gripper(MotorGroup):
         self.state_flag = not self.state_flag
         resp = std_srvs.srv.EmptyResponse()
         return resp
+
+    def grasp(self, object_name, link_name="", touch_links=[]):
+        result = self.move_group.attach_object(object_name, link_name, touch_links)
+        self.close_gripper()
+        return result
+
+    def release(self, name):
+        self.open_gripper()
+        return self.move_group.detach_object(name)
 
 
 def main():

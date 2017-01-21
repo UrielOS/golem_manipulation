@@ -165,7 +165,7 @@ def inverse_kinematics(x, y, z, yaw, pitch, roll):
                                 if abs(dk[3] - test[3]) <= etol:
                                     if abs(dk[4] - test[4]) <= etol:
                                         solution.append(current_sol)
-                                        print 'sol', i, '|', signs, '|', current_sol
+                                        # print 'sol', i, '|', signs, '|', current_sol
 
                 except ValueError:
                     pass
@@ -198,15 +198,18 @@ def ik_position(x, y, z):
                     pitch *= (-1) ** n
                     ik_sol = inverse_kinematics(x, y, z, yaw, pitch, roll)
                     if ik_sol:
-                        print 'Solution was found in', count, 'iterations:'
-                        print 'pitch=', pitch, ' roll=', roll
+                        print 'IK Solution was found in', count, 'iterations.'
+                        # print 'Final orientation:'
+                        # print '   - yaw   =', yaw
+                        # print '   - pitch =', pitch
+                        # print '   - roll  =', roll
                         return ik_sol
                     count += 1
                 pitch = abs(pitch) + inc_pitch
         roll = abs(roll) + inc_roll
 
     print count, 'iterations were performed.'
-    print 'pitch=', pitch, ' roll=', roll
+    # print 'pitch=', pitch, ' roll=', roll
     print 'No solution was found.'
 
     return ()
